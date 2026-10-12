@@ -63,42 +63,6 @@ PHPAssignment3/
     └── tech_support.sql
 ```
 
-## Install with XAMPP on macOS
-
-1. Extract the ZIP.
-2. Copy the inner `PHPAssignment3` folder into:
-
-   ```text
-   /Applications/XAMPP/xamppfiles/htdocs/
-   ```
-
-3. Confirm that this file exists:
-
-   ```text
-   /Applications/XAMPP/xamppfiles/htdocs/PHPAssignment3/index.php
-   ```
-
-4. Start **Apache** and **MySQL** in XAMPP Manager.
-5. Open `http://localhost/phpmyadmin/`.
-6. Select **Import**, choose `PHPAssignment3/sql/tech_support.sql`, and click **Import/Go**.
-7. Open `http://localhost/PHPAssignment3/`.
-
-The provided SQL script recreates the complete `tech_support` database and its sample data. Importing it again resets changes made during testing.
-
-### Database credentials
-
-The supplied SQL creates the classroom account used by `model/database.php`:
-
-```text
-Database: tech_support
-Username: ts_user
-Password: pa55word
-Host: 127.0.0.1
-```
-
-If phpMyAdmin reports an error only on the final `GRANT` statement, your MySQL/MariaDB version may use different account-creation syntax. For local XAMPP testing, either create `ts_user` with the listed password and grant access to `tech_support`, or temporarily change `model/database.php` to the local `root` account and its configured password.
-
-The folder must remain named `PHPAssignment3`. If you deliberately use another folder name, update `BASE_URL` in `config.php`.
 
 ## How each project works
 
@@ -190,44 +154,7 @@ PHP parses the value with `date_create()` and stores the MySQL-compatible format
 
 Open each controller in VS Code and show the `switch ($action)` statement. This provides clear evidence for Project 8-1.
 
-## GitHub repository setup
-
-Create a new, empty public GitHub repository named `PHPAssignment3`. Do not add a GitHub README, `.gitignore`, or license during creation because the local project already contains files.
-
-Open the VS Code terminal inside the local `PHPAssignment3` folder and run:
-
-```bash
-git init
-git branch -M main
-git add .
-git commit -m "Complete MWD4A Assignment 3 SportsPro projects"
-git remote add origin https://github.com/MovingSpots/PHPAssignment3.git
-git push -u origin main
-```
-
-Verify that the repository contains all project folders and `sql/tech_support.sql`:
-
-```text
-https://github.com/MovingSpots/PHPAssignment3
-```
-
-Submit this Git URL:
-
-```text
-https://github.com/MovingSpots/PHPAssignment3.git
-```
-
-If `origin` already exists but is incorrect, use:
-
-```bash
-git remote set-url origin https://github.com/MovingSpots/PHPAssignment3.git
-```
-
-Do not force-push. If GitHub already contains a commit, pull it safely with `git pull origin main --no-rebase --allow-unrelated-histories`, resolve any reported conflicts, commit the merge, and then push.
-
-## Suggested submission message
-
-Dear Professor Jasper,
+Dear Professor Kadeem Cherman,
 
 I have completed MWD4A Assignment 3. My SportsPro Technical Support application implements Project 6-5 Create Incident, Project 7-1 Country Drop-down, Project 8-1 Switch-based Controllers, and Project 10-1 Improved Date Handling.
 
